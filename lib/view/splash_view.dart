@@ -6,20 +6,24 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 2), () {
-      Get.toNamed('/countries');
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.offAllNamed('/countries');
     });
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-
-          FlutterLogo(
-            size: 120,
-          ),
-
-          CircularProgressIndicator(),
-        ],
+    return const Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            FlutterLogo(
+              size: 240,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            CircularProgressIndicator(),
+          ],
+        ),
       ),
     );
   }
